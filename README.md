@@ -41,7 +41,7 @@ Imported data is stored in the following structure.
                 37.79238986198323
             ]
         }
-    }
+}
 ```
 
 ## GetTrucks
