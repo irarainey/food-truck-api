@@ -6,6 +6,8 @@ This dataset is made available to the public, in a range of different formats, f
 
 This project utiises that dataset to provide a simple REST API to query the trucks available within a given range of a specified starting point. This data is returned in [GeoJSON](https://datatracker.ietf.org/doc/html/rfc7946) format, which can then easily be consumed other applications to render onto a map.
 
+An example project to render this data onto a map can be found [in this repository](https://github.com/irarainey/food-truck-spa), and hosted at [https://foodtrucks.codeshed.dev](https://foodtrucks.codeshed.dev).
+
 The API is written as an Azure Function App in C# using the .NET 6 framework. It also utilises Azure CosmosDB are a data store for truck data. The API comprises two methods, `ImportTruckData` and `GetTrucks`.
 
 ## ImportTruckData
