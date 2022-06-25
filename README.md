@@ -1,4 +1,4 @@
-﻿# San Franciso Food Truck API
+﻿# San Francisco Food Truck API
 
 To better enable administration for the licensing of the vast array of food trucks in the San Francisco area, the city manage a dataset of food trucks together with information on the type of food they serve, their location, and their licence status.
 
