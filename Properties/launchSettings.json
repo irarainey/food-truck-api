@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "food_truck_api": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7103",
+      "launchBrowser": false
+    }
+  }
+}
