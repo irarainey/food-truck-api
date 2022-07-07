@@ -4,9 +4,7 @@ To better enable administration for the licensing of the vast array of food truc
 
 This dataset is made available to the public, in a range of different formats, for use in third-party applications. This dataset can be found on the [city's data portal](https://data.sfgov.org/Economy-and-Community/Mobile-Food-Facility-Permit/rqzj-sfat/data).
 
-This project utiises that dataset to provide a simple REST API to query the trucks available within a given range of a specified starting point. This data is returned in [GeoJSON](https://datatracker.ietf.org/doc/html/rfc7946) format, which can then easily be consumed by other applications to render onto a map.
-
-An example project rendering this data onto a map can be found [in this related repository](https://github.com/irarainey/food-truck-spa), and hosted at [https://foodtrucks.codeshed.dev](https://foodtrucks.codeshed.dev).
+This project utiises that dataset to provide a simple REST API to query the trucks available within a given range of a specified starting point. This data is returned in [GeoJSON](https://datatracker.ietf.org/doc/html/rfc7946) format, which can then easily be consumed by other applications to render onto a map. An example project rendering this data onto a map can be found [in this related repository](https://github.com/irarainey/food-truck-spa).
 
 The API is written as an Azure Function in C# using the .NET 6 framework. It also utilises Azure CosmosDB as a data store for truck data. The API comprises two methods, `ImportTruckData` and `GetTrucks`.
 
@@ -49,7 +47,7 @@ Imported data is stored in the following structure.
 The `GetTrucks` method runs as a http-triggered Azure Function which is exposed via a `GET` request. The method takes in querystring parameters for the starting latitude and longitude and the range to query for food trucks.
 
 ```
-https://food-truck-api.azurewebsites.net/api/GetTrucks?lon=-122.4052692&lat=37.7919346&distance=800
+https://host.com/api/GetTrucks?lon=-122.4052692&lat=37.7919346&distance=800
 ```
 
 The API method queries the database using the [geospatial data](https://docs.microsoft.com/en-us/azure/cosmos-db/sql/sql-query-geospatial-query) query functionality and returns an array of objects as specified above, detailing all food trucks found within the range specified within the request. Data for trucks will be returned if their licence status is `APPROVED` and their licence has not expired.
