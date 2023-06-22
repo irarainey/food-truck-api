@@ -4,7 +4,13 @@ To better enable administration for the licensing of the vast array of food truc
 
 This dataset is made available to the public, in a range of different formats, for use in third-party applications. This dataset can be found on the [city's data portal](https://data.sfgov.org/Economy-and-Community/Mobile-Food-Facility-Permit/rqzj-sfat/data).
 
-This project utiises that dataset to provide a simple REST API to query the trucks available within a given range of a specified starting point. This data is returned in [GeoJSON](https://datatracker.ietf.org/doc/html/rfc7946) format, which can then easily be consumed by other applications to render onto a map. An example project rendering this data onto a map can be found [in this related repository](https://github.com/irarainey/food-truck-spa).
+This project utiises that dataset to provide a simple REST API to query the trucks available within a given range of a specified starting point. This data is returned in [GeoJSON](https://datatracker.ietf.org/doc/html/rfc7946) format, which can then easily be consumed by other applications to render onto a map.
+
+![San Francisco Food Trucks](./assets/img/map.png)
+
+An simple example project rendering this data onto a map can be found [in the spa directory](/src/spa/). This is a simple JavaScript application to render food trucks returned from the API on a map using [leaflet.js](https://leafletjs.com/).
+
+The default start location for the map the Microsoft office in San Francisco, with an 800 metre range specified. These parameters can be amended using the controls in the toolbar.
 
 The API is written as an Azure Function in C# using the .NET 6 framework. It also utilises Azure CosmosDB as a data store for truck data. The API comprises two methods, `ImportTruckData` and `GetTrucks`.
 
